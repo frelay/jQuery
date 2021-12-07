@@ -150,4 +150,22 @@ $(function(){
    $('.arrowDown').click(function (e) { 
       e.preventDefault();      
    });
+
+   // Работа с формой
+
+   $(':checkbox').fadeOut(1000); // обращение к элементам формы через их type, если не указать родительский элемент, скроются все чекбоксы
+   $(':radio:checked').fadeOut(1000); // Скрывает чекбокс у которого есть атрибут checked (без пробела!!)
+
+   $(':submit').click(function () { 
+      let value = $('textarea').val(); // Получение значения элемента по клику на кнопку с типом submit
+      alert(value);
+   });
+
+   $('.text_1').focus(function () { // При фокусе добавляется класс
+      $(this).addClass('border');      
+   });
+   $('.text_1').blur(function () { // Блюр как фокус только наоборот
+      $(this).removeClass('border');      
+   });
+   // 3:08:21
 });
